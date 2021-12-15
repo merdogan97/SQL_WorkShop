@@ -73,4 +73,12 @@ WHERE Title LIKE '%Greatest%';
 
 SELECT *
 FROM invoices 
-WHERE InvoiceDate LIKE '201_-02%'; */     2010 YILINDAN 2019 yılı sonuna kadar
+WHERE InvoiceDate LIKE '201_-02%';   
+
+SELECT FirstName, LastName, City, Address
+FROM customers
+WHERE FirstName LIKE '___'; */
+
+/*  SELECT FirstName, LastName, City
+ FROM customers
+ WHERE LastName LIKE 'Sch%' OR LastName LIKE 'Go%'; */
