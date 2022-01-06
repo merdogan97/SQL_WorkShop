@@ -78,8 +78,8 @@ GROUP BY BillingCountry;
 
 
 /*===================================================
-        JOINS
-====================================================*/
+                                         JOINS
+====================================================
     
 --     Join islemleri farkli tablolardan secilen sutunlar ile yeni bir tablo 
 --     olusturmak icin kullanilabilir.
@@ -89,12 +89,12 @@ GROUP BY BillingCountry;
 --     icin JOIN islemleri kullanilabilir.
 
 --     Standart SQL'de en çok kullanılan Join islemleri:
---   	1) FULL JOIN:  Tablodaki tum sonuclari gosterir
---     2) INNER JOIN:  Tablolardaki ortak olan sonuc kumesini gosterir
---     3) LEFT JOIN:  Ilk tabloda (Sol) olup digerinde olmayan sonuclari gosterir
---     4) RIGHT JOIN: Sadece Ikinci tabloda olan tum sonuclari gosterir.
+--   	1) FULL JOIN       :   Tablodaki tum sonuclari gosterir
+--     2) INNER JOIN     :  Tablolardaki ortak olan sonuc kumesini gosterir
+--     3) LEFT JOIN        :  Ilk tabloda (Sol) olup digerinde olmayan sonuclari gosterir
+--     4) RIGHT JOIN     :  Sadece Ikinci tabloda olan tum sonuclari gosterir.
 
---		NOT: SQLite Sadece INNER, LEFT VE CROSS JOIN İşlemlerini desteklemektedir.
+--		NOT: SQLite Sadece INNER, LEFT VE CROSS JOIN İşlemlerini desteklemektedir.   (NOTT:    CROSS JOIN : diğerlerinde cross join diye bir şey yoktur. Çok  kullanmamayız)
  
  /*===================================================*/   
 
@@ -103,10 +103,26 @@ GROUP BY BillingCountry;
  bilgilerini  listeleyen bir sorgu yaziniz.*/
  
  /* SELECT * FROM markalar;   */
+ SELECT * FROM siparisler;
  
-SELECT markalar.marka_id, markalar.marka_adi, siparisler.siparis_adedi, siparisler.siparis_tarihi
- FROM markalar
- LEFT JOIN siparisler
- on markalar.marka_id=siparisler.marka_id;
+/*SELECT markalar.marka_id, markalar.marka_adi, siparisler.siparis_adedi, siparisler.siparis_tarihi
+FROM markalar
+LEFT JOIN siparisler  on markalar.marka_id=siparisler.marka_id;
+ 
+ SELECT TABLO_ADI.SUTUN_ADI, ....
+ FROM TABLO1
+ JOIN TABLO2
+ ON TABLO.FK = TABLO2.PK ; 
+ 
+ SELECT * FROM tracks;
+  
+ SELECT * FROM GENRES; */
+ 
+SELECT t.name as Song_name, g.name as Song_genre
+FROM tracks t
+JOIN genres g
+ON t.GenreId = g.GenreId;
+ 
+ 
  
  
